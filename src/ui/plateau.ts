@@ -1,5 +1,7 @@
 import { generateRectMap } from "../setup";
 import { d, rl } from "../index";
+import { landTheRover } from "./landing";
+import { generateRoverMap } from "../map";
 
 export function getWidth(): void {
   rl.question(
@@ -27,7 +29,28 @@ function getLength(): void {
       console.log(`Great, so it's ${pLength} wide.`);
       d.pLength = pLength;
       d.map = generateRectMap(d.pWidth, d.pLength);
-      console.log(JSON.stringify(d));
+      drawPlateau(false);
+      landTheRover();
+      // console.log(JSON.stringify(d));
     }
   });
+}
+
+export function drawPlateau(landed: boolean): void {
+  console.clear();
+  let liveMap = [];
+  if (landed) {
+    liveMap = generateRoverMap(d.map, d.position);
+  } else {
+    liveMap = d.map;
+  }
+  console.log(
+    "y" + "-".repeat(d.pWidth) + "\\ (max y=" + (liveMap.length - 1) + ")"
+  );
+  for (let i = 0; i < liveMap.length; i++) {
+    console.log("|" + liveMap[liveMap.length - i - 1] + "|");
+  }
+  console.log(
+    "0" + "-".repeat(d.pWidth) + "x (max x=" + (liveMap[0].length - 1) + ")"
+  );
 }
