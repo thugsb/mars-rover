@@ -20,7 +20,7 @@ export function getNewPosition({ x, y, d }: RoverPosition): RoverPosition {
 }
 
 export function terrainIsNavigable(x: number, y: number, map: Map): boolean {
-  if (y > map.length || x > map[0].length || y < 0 || x < 0) {
+  if (y >= map.length || x > map[0].length || y < 0 || x < 0) {
     return false;
   }
   if (map[y].charAt(x) === "·") {
