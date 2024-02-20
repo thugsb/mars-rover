@@ -16,7 +16,7 @@ export function roverLandsOnPlateau(
   map: Map,
   { x, y, d }: RoverPosition
 ): boolean {
-  if (x > map[0].length || y > map.length || x < 0 || y < 0) {
+  if (x > map[0].length || y >= map.length || x < 0 || y < 0) {
     return false;
   }
   if (map[y].charAt(x) === "·") {
