@@ -10,7 +10,7 @@ describe("Drawing a map", () => {
     expect(generateRoverMap(landingPlateau, roverCoords)).toEqual([
       "······",
       "······",
-      "···E··",
+      "···→··",
       "······",
     ]);
   });
