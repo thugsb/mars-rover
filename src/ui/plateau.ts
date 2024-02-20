@@ -53,4 +53,5 @@ export function drawPlateau(landed: boolean): void {
   console.log(
     "0" + "-".repeat(d.pWidth) + "x (max x=" + (liveMap[0].length - 1) + ")"
   );
+  console.log("");
 }

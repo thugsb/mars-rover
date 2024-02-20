@@ -11,6 +11,8 @@ type marsData = {
   pLength: number;
   map: Array<string>;
   position: RoverPosition;
+  lastInstructions: string;
+  allInstructions: string;
 };
 
 export let d: marsData = {
@@ -18,6 +20,8 @@ export let d: marsData = {
   pLength: 0,
   map: [""],
   position: { x: 0, y: 0, d: "E" },
+  lastInstructions: "",
+  allInstructions: "",
 };
 
 const pWidth = goToMars();

@@ -1,6 +1,7 @@
 import { d, rl } from "../index";
 import { roverLandsOnPlateau } from "../setup";
 import { drawPlateau } from "./plateau";
+import { driveAround } from "./drive";
 
 export function landTheRover(): void {
   console.log("We've identified the plateau where we'll land.");
@@ -51,6 +52,7 @@ function getD(): void {
         console.log(`Facing: ${i}.`);
         if (roverLandsOnPlateau(d.map, d.position)) {
           drawPlateau(true);
+          driveAround();
         } else {
           console.log(
             "Something blocks the landing. Where else do you want to land?"
