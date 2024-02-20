@@ -19,7 +19,7 @@ export function moveRover(
       newRoverPosition.d = turnRight(newRoverPosition.d);
     }
     if (instruction === "M") {
-      const targetCoords = getNewPosition(position);
+      const targetCoords = getNewPosition(newRoverPosition);
       if (terrainIsNavigable(targetCoords.x, targetCoords.y, map)) {
         newRoverPosition = getNewPosition(newRoverPosition);
       }
