@@ -1,5 +1,4 @@
 import { Map, RoverPosition } from "./setup.types";
-const clc = require("cli-color");
 
 export function generateRoverMap(
   plateauMap: Map,
