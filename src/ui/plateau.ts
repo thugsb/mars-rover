@@ -31,7 +31,6 @@ function getLength(): void {
       d.map = generateRectMap(d.pWidth, d.pLength);
       drawPlateau(false);
       landTheRover();
-      // console.log(JSON.stringify(d));
     }
   });
 }
@@ -48,10 +47,15 @@ export function drawPlateau(landed: boolean): void {
     "y" + "-".repeat(d.pWidth) + "\\ (max y=" + (liveMap.length - 1) + ")"
   );
   for (let i = 0; i < liveMap.length; i++) {
-    console.log("|" + liveMap[liveMap.length - i - 1] + "|");
+    const yAxis0 = i === liveMap.length - 1 ? "0" : "|";
+    console.log(yAxis0 + liveMap[liveMap.length - i - 1] + "|");
   }
   console.log(
-    "0" + "-".repeat(d.pWidth) + "x (max x=" + (liveMap[0].length - 1) + ")"
+    "+0" +
+      "-".repeat(d.pWidth - 1) +
+      "x (max x=" +
+      (liveMap[0].length - 1) +
+      ")"
   );
   console.log("");
 }
