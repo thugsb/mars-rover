@@ -5,29 +5,31 @@ import { generateRoverMap } from "../map";
 
 export function getWidth(): void {
   rl.question(
-    "How wide is the landing plateau? (x)",
+    "How wide is the landing plateau? (x) ",
     (plateauWidth: string) => {
       const pWidth = parseInt(plateauWidth);
       if (Number.isNaN(pWidth)) {
         console.log("Please enter a number!");
         getWidth();
       } else {
-        console.log(`Great, so it's ${pWidth} wide.`);
-        d.pWidth = pWidth;
+        const abs = Math.abs(pWidth);
+        console.log(`Great, so it's ${abs} wide.`);
+        d.pWidth = abs;
         getLength();
       }
     }
   );
 }
 function getLength(): void {
-  rl.question("And how long is the plateau? (y)", (plateauLength: string) => {
+  rl.question("And how long is the plateau? (y) ", (plateauLength: string) => {
     const pLength = parseInt(plateauLength);
     if (Number.isNaN(pLength)) {
       console.log("Please enter a number!");
       return getLength();
     } else {
-      console.log(`Great, so it's ${pLength} wide.`);
-      d.pLength = pLength;
+      const abs = Math.abs(pLength);
+      console.log(`Great, so it's ${abs} wide.`);
+      d.pLength = abs;
       d.map = generateRectMap(d.pWidth, d.pLength);
       drawPlateau(false);
       landTheRover();
