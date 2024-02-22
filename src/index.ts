@@ -23,6 +23,7 @@ export let d: MarsData = {
 goToMars();
 
 function goToMars(): void {
+  console.clear();
   console.log("Welcome to Mars Central.");
   console.log("We'll be landing on a rectangular plateau.");
   getWidth();

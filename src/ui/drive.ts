@@ -5,7 +5,7 @@ import { getNewPosition, terrainIsNavigable } from "../move";
 
 export function driveAround() {
   rl.question(
-    "What instructions will you give to rover now? ",
+    "What instructions will you give to the rover now? ",
     (input: string) => {
       const invalidInstructions: string[] = [];
       const refusedInstructions: string[] = [];
@@ -30,12 +30,14 @@ export function driveAround() {
           "WARNING: the following invalid instructions were given and ignored: " +
             invalidInstructions.join(",")
         );
+        console.log("");
       }
       if (refusedInstructions.length > 0) {
         console.log(
           "WARNING: the following instructions were refused: " +
             refusedInstructions.join(",")
         );
+        console.log("");
       }
       console.log(
         `The last set of instructions given were ${input
@@ -43,6 +45,7 @@ export function driveAround() {
           .split("")
           .join(",")}.`
       );
+      console.log("");
       driveAround();
     }
   );

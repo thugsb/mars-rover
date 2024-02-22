@@ -10,7 +10,7 @@ export function landTheRover(): void {
 }
 
 function getX(): void {
-  rl.question("What's the x landing coordinate?", (input: string) => {
+  rl.question("What's the x landing coordinate? ", (input: string) => {
     const x = parseInt(input);
     if (Number.isNaN(x)) {
       console.log("x must be a number!");
@@ -27,7 +27,7 @@ function getX(): void {
 }
 
 function getY(): void {
-  rl.question("What's the y landing coordinate?", (input: string) => {
+  rl.question("What's the y landing coordinate? ", (input: string) => {
     const y = parseInt(input);
     if (Number.isNaN(y)) {
       console.log("y must be a number!");
@@ -44,7 +44,7 @@ function getY(): void {
 }
 function getD(): void {
   rl.question(
-    "Which direction will it be facing? N,S,E or W?",
+    "Which direction will it be facing? N,S,E or W? ",
     (input: string) => {
       const i = input.toUpperCase();
       if (i === "N" || i === "S" || i === "E" || i === "W") {
